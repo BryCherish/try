@@ -49,7 +49,7 @@ void create_process(const char*srcfile,const char*desfile,int proNum,int blocksi
 
 		printf("process %d, startpos %d, blocksize %d\n",getpid(),pos,blocksize);
 
-		if(execl("/home/colin/0605Linux/processCopy/copy.c","copy",srcfile,desfile,strsize,strpos,NULL)==-1)
+		if(execl("/home/colin/0605Linux/processCopy/copy","copy",srcfile,desfile,strsize,strpos,NULL)==-1)
 		{
 			perror("failed");
 			exit(0);
