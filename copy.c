@@ -16,7 +16,9 @@ void mycopy(const char *srcfile,const char *desfile, char *blocksize,char* pos)
 		int ppos=atoi(pos);
 		int size=atoi(blocksize);
 		
-		while(rsize=read(sfd,buffer,size+ppos))
+		lseek(sfd,ppos,SEEK_SET);
+		lseek(dfd,ppos,SEEK_SET);
+		while(rsize=read(sfd,buffer,size))
 		{
 			write(dfd,buffer,rsize);
 			if(rsize==0)
